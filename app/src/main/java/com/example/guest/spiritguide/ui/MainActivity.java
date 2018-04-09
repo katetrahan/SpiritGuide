@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "Please type a question", Toast.LENGTH_LONG).show();
             } else {
                 Intent intent = new Intent(MainActivity.this, SolutionsActivity.class);
+                intent.putExtra("question", question);
                 startActivity(intent);
             }
         }

@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.example.guest.spiritguide.R;
 
+import java.util.Random;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -23,13 +25,19 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 2000;
+    private final Random r = new Random();
+    private final String[] magictext = {"yes", "no", "maybe"};
+    private TextView text;
     @BindView(R.id.questionTextView) TextView mQuestionTextView;
+//    @BindView(R.id.resultTextView) TextView mResultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solutions);
         ButterKnife.bind(this);
+        text = (TextView) findViewById(R.id.resultTextView);
+
 
         Intent intent = getIntent();
         String question = intent.getStringExtra("question");
@@ -63,6 +71,8 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
                     Log.d("SensorEventListener", "shaking");
                     Toast.makeText(SolutionsActivity.this, "shake works", Toast.LENGTH_LONG).show();
 
+                    magicbegins();
+
                     last_x = x;
                     last_y = y;
                     last_z = z;
@@ -78,6 +88,16 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+    public void magicbegins()
+    {
+
+        int rand = r.nextInt(magictext.length);
+
+        text.setText(magictext[rand]);
+
+    }
+
 
 
 }

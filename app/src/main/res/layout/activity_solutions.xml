@@ -27,6 +27,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="197dp"
         android:text="Shake for result"
-        android:textSize="40sp" />
+        android:textSize="20sp"
+        android:layout_above="@+id/resultTextView"/>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="117dp"
+        android:text="Result"
+        android:textSize="45sp" />
 
 </RelativeLayout>

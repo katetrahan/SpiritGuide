@@ -24,7 +24,7 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private Sensor mSensor;
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
-    private static final int SHAKE_THRESHOLD = 2000;
+    private static final int SHAKE_THRESHOLD = 3000;
     private final Random r = new Random();
     private final String[] magictext = {"yes", "no", "maybe"};
     private TextView text;

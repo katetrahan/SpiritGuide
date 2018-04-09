@@ -26,7 +26,7 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 3000;
     private final Random r = new Random();
-    private final String[] magictext = {"yes", "no", "maybe"};
+    private final String[] magicanswers = {"yes", "no", "maybe", "count on it", "ask again", "cannot tell now", "ask again later"};
     private TextView text;
     @BindView(R.id.questionTextView) TextView mQuestionTextView;
 //    @BindView(R.id.resultTextView) TextView mResultTextView;
@@ -71,7 +71,7 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
                     Log.d("SensorEventListener", "shaking");
                     Toast.makeText(SolutionsActivity.this, "shake works", Toast.LENGTH_LONG).show();
 
-                    magicbegins();
+                    eightball();
 
                     last_x = x;
                     last_y = y;
@@ -89,12 +89,12 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
 
     }
 
-    public void magicbegins()
+    public void eightball()
     {
 
-        int rand = r.nextInt(magictext.length);
+        int rand = r.nextInt(magicanswers.length);
 
-        text.setText(magictext[rand]);
+        text.setText(magicanswers[rand]);
 
     }
 

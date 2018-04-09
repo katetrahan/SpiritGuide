@@ -16,6 +16,17 @@
         android:text="Question"
         android:textColor="@color/colorBackground"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_above="@+id/shakePhoneTextView"/>
+
+    <TextView
+        android:id="@+id/shakePhoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="197dp"
+        android:text="Shake for result"
+        android:textSize="40sp" />
 
 </RelativeLayout>

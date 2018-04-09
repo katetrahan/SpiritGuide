@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/userQuestionEditText"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="71dp"
+        android:layout_marginBottom="90dp"
         android:text="Ask Me A Question"
         android:textSize="32sp"
         android:textColor="@color/colorTextIcons"
@@ -31,9 +31,11 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="167dp"
-        android:ems="10"
-        android:hint="Enter a question"
-        android:background="@color/colorTextIcons"/>
+        android:ems="15"
+        android:hint="Enter any question you desire to have answered"
+        android:inputType="textMultiLine"
+        android:background="@color/colorTextIcons"
+        android:textSize="24sp"/>
 
     <Button
         android:id="@+id/getResponseButton"

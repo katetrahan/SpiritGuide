@@ -26,10 +26,10 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 3000;
     private final Random r = new Random();
-    private final String[] magicanswers = {"yes", "no", "maybe", "count on it", "ask again", "cannot tell now", "ask again later"};
+    private final String[] magicanswers = {"yes", "no", "maybe", "count on it", "cannot tell now", "ask again later", "no doubt"};
     private TextView text;
     @BindView(R.id.questionTextView) TextView mQuestionTextView;
-//    @BindView(R.id.resultTextView) TextView mResultTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,6 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         setContentView(R.layout.activity_solutions);
         ButterKnife.bind(this);
         text = (TextView) findViewById(R.id.resultTextView);
-
 
         Intent intent = getIntent();
         String question = intent.getStringExtra("question");
@@ -68,7 +67,6 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
                 float speed = Math.abs(x + y + z - last_x - last_y - last_z)/diffTime * 10000;
 
                 if(speed > SHAKE_THRESHOLD) {
-                    Log.d("SensorEventListener", "shaking");
                     Toast.makeText(SolutionsActivity.this, "shake works", Toast.LENGTH_LONG).show();
 
                     eightball();
@@ -88,14 +86,9 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
-
-    public void eightball()
-    {
-
+    public void eightball() {
         int rand = r.nextInt(magicanswers.length);
-
         text.setText(magicanswers[rand]);
-
     }
 
 

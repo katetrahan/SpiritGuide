@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.guest.spiritguide.MainActivity">
+    tools:context="com.example.guest.spiritguide.ui.MainActivity"
+    android:background="@color/colorBackground">
 
     <TextView
+        android:id="@+id/frontPageTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_above="@+id/UserQuestionEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="71dp"
+        android:text="Ask Me A Question"
+        android:textSize="32sp"
+        android:textColor="@color/colorTextIcons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+       />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/UserQuestionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="167dp"
+        android:ems="10"
+        android:hint="Enter a question"
+        android:background="@color/colorTextIcons"/>
+
+    <Button
+        android:id="@+id/getResponseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Ask"
+        android:background="@color/colorAccent"
+        />
+
+</RelativeLayout>

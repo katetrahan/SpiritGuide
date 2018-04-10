@@ -2,10 +2,12 @@ package com.example.guest.spiritguide.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +30,8 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private final Random r = new Random();
     private final String[] magicanswers = {"yes", "no", "maybe", "count on it", "cannot tell now", "ask again later", "no doubt"};
     private TextView text;
+    private SharedPreferences mSharedPreferences;
+    private String mRecentQuestion;
     @BindView(R.id.questionTextView) TextView mQuestionTextView;
 
 
@@ -43,9 +47,15 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
 
         mQuestionTextView.setText("Your Question: " + question);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentQuestion = mSharedPreferences.getString(Constants.PREFERENCES_QUESTION_KEY, null);
+        Log.d("SHAREDPREF", mRecentQuestion);
+
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mSensor, mSensorManager.SENSOR_DELAY_NORMAL);
+
+
 
     }
 

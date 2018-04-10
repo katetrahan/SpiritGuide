@@ -1,6 +1,8 @@
 package com.example.guest.spiritguide.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,10 @@ import butterknife.ButterKnife;
 import com.example.guest.spiritguide.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
     @BindView(R.id.getResponseButton) Button mGetResponseButton;
     @BindView(R.id.userQuestionEditText) EditText mUserQuestionEditText;
 
@@ -24,6 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+
         mGetResponseButton.setOnClickListener(this);
 
     }
@@ -32,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
         if (v == mGetResponseButton) {
             String question = mUserQuestionEditText.getText().toString();
+            addToSharedPreferences(question);
 
 
             if (question.equals("")) {
@@ -42,5 +53,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         }
+
+
+    }
+    private void addToSharedPreferences(String question) {
+        mEditor.putString(Constants.PREFERENCES_QUESTION_KEY, question).apply();
     }
 }

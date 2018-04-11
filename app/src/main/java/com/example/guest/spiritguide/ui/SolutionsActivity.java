@@ -3,6 +3,7 @@ package com.example.guest.spiritguide.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,8 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private TextView text;
 //    private SharedPreferences mSharedPreferences;
 //    private String mRecentQuestion;
+    RelativeLayout solutionsContainer;
+    AnimationDrawable anim;
     @BindView(R.id.questionTextView) TextView mQuestionTextView;
 
 
@@ -59,6 +63,12 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mSensor, mSensorManager.SENSOR_DELAY_NORMAL);
+
+        solutionsContainer = (RelativeLayout) findViewById(R.id.solutionsContainer);
+
+        anim = (AnimationDrawable) solutionsContainer.getBackground();
+        anim.setEnterFadeDuration(500);
+        anim.setExitFadeDuration(500);
 
 
 
@@ -105,6 +115,22 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         int rand = r.nextInt(magicanswers.length);
         text.setText(magicanswers[rand]);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (anim != null && !anim.isRunning())
+            anim.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (anim != null && anim.isRunning())
+            anim.stop();
+    }
+
+
 
 
 

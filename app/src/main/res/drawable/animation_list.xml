@@ -2,16 +2,16 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:drawable="@drawable/fortuneteller"
-        android:duration="10000" />
+        android:duration="1000" />
     <item
         android:drawable="@drawable/missoula"
-        android:duration="10000" />
+        android:duration="1000" />
     <item
         android:drawable="@drawable/seattle"
-        android:duration="10000" />
+        android:duration="1000" />
 
     <item
         android:drawable="@drawable/ireland"
-        android:duration="10000" />
+        android:duration="1000" />
 
 </animation-list>

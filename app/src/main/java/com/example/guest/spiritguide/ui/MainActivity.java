@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         container = (RelativeLayout) findViewById(R.id.container);
 
         anim = (AnimationDrawable) container.getBackground();
-        anim.setEnterFadeDuration(3000);
-        anim.setExitFadeDuration(2000);
+        anim.setEnterFadeDuration(1000);
+        anim.setExitFadeDuration(1000);
 
 
 

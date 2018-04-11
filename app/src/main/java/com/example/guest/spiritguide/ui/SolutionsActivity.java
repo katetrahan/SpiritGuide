@@ -32,7 +32,8 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private float last_x, last_y, last_z;
     private static final int SHAKE_THRESHOLD = 3000;
     private final Random r = new Random();
-    private final String[] magicanswers = {"yes", "no", "maybe", "count on it", "cannot tell now", "ask again later", "no doubt"};
+    private final String[] magicanswers = {"Yes", "No", "Maybe", "Hell Ya", "Please, No", "Ask Again Later", "You're Crazy", "Maybe In Crazy World", "All Signs Point To Yes", "You Look Amazing Today" };
+
     private TextView text;
 //    private SharedPreferences mSharedPreferences;
 //    private String mRecentQuestion;

@@ -41,7 +41,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="117dp"
-
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@drawable/circle"
         android:textSize="45sp" />
 
 

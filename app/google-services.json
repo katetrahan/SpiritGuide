@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "193345900352",
+    "firebase_url": "https://spiritguide-6f4aa.firebaseio.com",
+    "project_id": "spiritguide-6f4aa",
+    "storage_bucket": "spiritguide-6f4aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193345900352:android:6030530b441c1e58",
+        "android_client_info": {
+          "package_name": "com.example.guest.spiritguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193345900352-16v5tcs0mh5bm1o3ntuqbupggg12mrgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.spiritguide",
+            "certificate_hash": "c0306041b68e0c4a52caf35a4f183320a4fe8b65"
+          }
+        },
+        {
+          "client_id": "193345900352-jggt0eb142irp9p58uue0i1f08em4430.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf79z2I_ONNscaNRKawbZTVN0lPEfz9EI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193345900352-jggt0eb142irp9p58uue0i1f08em4430.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

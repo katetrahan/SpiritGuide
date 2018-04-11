@@ -49,7 +49,10 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentQuestion = mSharedPreferences.getString(Constants.PREFERENCES_QUESTION_KEY, null);
-        Log.d("SHAREDPREF", mRecentQuestion);
+//        Log.d("SHAREDPREF", mRecentQuestion);
+        if(mRecentQuestion != null) {
+            eightball();
+        }
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);

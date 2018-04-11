@@ -74,8 +74,6 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         anim.setEnterFadeDuration(500);
         anim.setExitFadeDuration(500);
 
-
-
     }
 
     @Override
@@ -133,8 +131,6 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         if (anim != null && anim.isRunning())
             anim.stop();
     }
-
-
 
 
 

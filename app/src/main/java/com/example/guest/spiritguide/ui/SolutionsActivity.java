@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +31,10 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private final Random r = new Random();
     private final String[] magicanswers = {"yes", "no", "maybe", "count on it", "cannot tell now", "ask again later", "no doubt"};
     private TextView text;
-    private SharedPreferences mSharedPreferences;
-    private String mRecentQuestion;
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentQuestion;
     @BindView(R.id.questionTextView) TextView mQuestionTextView;
+
 
 
     @Override
@@ -47,12 +49,12 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
 
         mQuestionTextView.setText("Your Question: " + question);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentQuestion = mSharedPreferences.getString(Constants.PREFERENCES_QUESTION_KEY, null);
-//        Log.d("SHAREDPREF", mRecentQuestion);
-        if(mRecentQuestion != null) {
-            eightball();
-        }
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentQuestion = mSharedPreferences.getString(Constants.PREFERENCES_QUESTION_KEY, null);
+////        Log.d("SHAREDPREF", mRecentQuestion);
+//        if(mRecentQuestion != null) {
+//            eightball();
+//        }
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);

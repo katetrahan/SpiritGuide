@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="197dp"
+        android:layout_marginBottom="300dp"
         android:text="Shake for result"
         android:textColor="@color/colorTextIcons"
         android:textSize="20sp"
@@ -41,7 +41,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="117dp"
-        android:text="Result"
+
         android:textSize="45sp" />
 
 

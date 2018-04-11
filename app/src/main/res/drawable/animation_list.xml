@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/fortuneteller"
+        android:duration="10000" />
+    <item
+        android:drawable="@drawable/missoula"
+        android:duration="10000" />
+    <item
+        android:drawable="@drawable/seattle"
+        android:duration="10000" />
+
+    <item
+        android:drawable="@drawable/ireland"
+        android:duration="10000" />
+
+</animation-list>

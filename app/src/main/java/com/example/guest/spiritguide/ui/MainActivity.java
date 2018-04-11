@@ -2,6 +2,7 @@ package com.example.guest.spiritguide.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.preference.PreferenceManager;
 import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private DatabaseReference mAskedQuestionReference;
     private ValueEventListener mAskedQuestionReferenceListener;
+    RelativeLayout container;
+    AnimationDrawable anim;
 
     @BindView(R.id.getResponseButton) Button mGetResponseButton;
     @BindView(R.id.userQuestionEditText) EditText mUserQuestionEditText;
@@ -61,6 +66,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        container = (RelativeLayout) findViewById(R.id.container);
+
+        anim = (AnimationDrawable) container.getBackground();
+        anim.setEnterFadeDuration(3000);
+        anim.setExitFadeDuration(2000);
 
 
 
@@ -109,11 +120,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAskedQuestionReference.removeEventListener(mAskedQuestionReferenceListener);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (anim != null && !anim.isRunning())
+            anim.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (anim != null && anim.isRunning())
+            anim.stop();
+    }
+
 
 
 //    private void addToSharedPreferences(String question) {
 //        mEditor.putString(Constants.PREFERENCES_QUESTION_KEY, question).apply();
 //    }
+
+
+
+
 }
 
 

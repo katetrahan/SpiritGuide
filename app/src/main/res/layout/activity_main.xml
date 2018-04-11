@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/container"
     tools:context="com.example.guest.spiritguide.ui.MainActivity"
-    android:background="@color/colorBackground">
+    android:background="@drawable/animation_list">
 
     <TextView
         android:id="@+id/frontPageTextView"

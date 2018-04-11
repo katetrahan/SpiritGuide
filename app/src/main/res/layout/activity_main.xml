@@ -41,12 +41,13 @@
 
     <Button
         android:id="@+id/getResponseButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Ask"
-        android:background="@color/colorAccent"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/main_button"
         />
 
 </RelativeLayout>

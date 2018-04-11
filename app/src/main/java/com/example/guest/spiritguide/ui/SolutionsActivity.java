@@ -3,6 +3,7 @@ package com.example.guest.spiritguide.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -47,6 +48,9 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         setContentView(R.layout.activity_solutions);
         ButterKnife.bind(this);
         text = (TextView) findViewById(R.id.resultTextView);
+
+        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/DroidSans.ttf");
+        mQuestionTextView.setTypeface(robotoFont);
 
         Intent intent = getIntent();
         String question = intent.getStringExtra("question");

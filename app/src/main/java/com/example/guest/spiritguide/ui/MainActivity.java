@@ -2,6 +2,7 @@ package com.example.guest.spiritguide.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.preference.PreferenceManager;
 import android.support.annotation.MainThread;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -24,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import android.graphics.Typeface;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,11 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private DatabaseReference mAskedQuestionReference;
     private ValueEventListener mAskedQuestionReferenceListener;
+//    private TextView mSpiritGuideTextView;
     RelativeLayout container;
     AnimationDrawable anim;
 
     @BindView(R.id.getResponseButton) Button mGetResponseButton;
     @BindView(R.id.userQuestionEditText) EditText mUserQuestionEditText;
+    @BindView(R.id.frontPageTextView) TextView mSpiritGuideTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getInstance()
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_ASKED_QUESTION);
+
+
+
+
 
        mAskedQuestionReferenceListener = mAskedQuestionReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -59,13 +68,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+
+
+
+       });
 
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/DroidSans.ttf");
+        mSpiritGuideTextView.setTypeface(robotoFont);
 
         container = (RelativeLayout) findViewById(R.id.container);
 

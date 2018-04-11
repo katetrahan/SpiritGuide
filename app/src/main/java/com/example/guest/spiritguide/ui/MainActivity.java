@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/DroidSans.ttf");
+        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
         mSpiritGuideTextView.setTypeface(robotoFont);
 
         container = (RelativeLayout) findViewById(R.id.container);

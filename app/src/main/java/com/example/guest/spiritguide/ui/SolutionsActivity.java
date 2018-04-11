@@ -49,7 +49,7 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
         ButterKnife.bind(this);
         text = (TextView) findViewById(R.id.resultTextView);
 
-        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/DroidSans.ttf");
+        Typeface robotoFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
         mQuestionTextView.setTypeface(robotoFont);
 
         Intent intent = getIntent();

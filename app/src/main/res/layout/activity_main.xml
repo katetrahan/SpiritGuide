@@ -26,11 +26,10 @@
         android:id="@+id/getResponseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/frontPageTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp"
+        android:layout_centerVertical="true"
         android:background="@drawable/ripple_effect"
-        android:text="Ask" />
+        android:text="Touch here to continue" />
 
     <EditText
         android:id="@+id/userQuestionEditText"
@@ -38,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/getResponseButton"
-        android:layout_marginTop="108dp"
+        android:layout_below="@+id/frontPageTextView"
+        android:layout_marginTop="67dp"
         android:background="@color/colorTextIcons"
         android:ems="15"
         android:hint="Enter any question you desire to have answered"

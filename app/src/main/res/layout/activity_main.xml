@@ -13,41 +13,36 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/userQuestionEditText"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="90dp"
         android:text="Ask Me A Question"
-        android:textSize="32sp"
         android:textColor="@color/colorTextIcons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-       />
-
-    <EditText
-        android:id="@+id/userQuestionEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="167dp"
-        android:ems="15"
-        android:hint="Enter any question you desire to have answered"
-        android:inputType="textMultiLine"
-        android:background="@color/colorTextIcons"
-        android:textSize="24sp"/>
+        android:textSize="32sp" />
 
     <Button
         android:id="@+id/getResponseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/frontPageTextView"
         android:layout_centerHorizontal="true"
-        android:text="Ask"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="136dp"
         android:background="@drawable/main_button"
-        />
+        android:text="Ask" />
+
+    <EditText
+        android:id="@+id/userQuestionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/getResponseButton"
+        android:layout_marginTop="108dp"
+        android:background="@color/colorTextIcons"
+        android:ems="15"
+        android:hint="Enter any question you desire to have answered"
+        android:inputType="textMultiLine"
+        android:textSize="24sp" />
+
+
 
 </RelativeLayout>

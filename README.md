@@ -14,10 +14,8 @@ _This application is used to take in user input and return a answer. The applica
 | :-------------     | :------------- | :-------------
 | **Main Activity displays input box**| |  |
 | **Main Activity input takes in user question/statement**| "Should I buy these shoes?" | "Should I buy these shoes?" |
-| **Application has working shake sensor in place/application response to shake sensor**| 'Shake phone above 700 shake threshold' | 'displays toast to show shake threshold reached' |
-| **Calls to yes/no api OR randomly generates yes/no/maybe response when shaken** |'shake phone' | "yes"|
-
-
+| **Application has working shake sensor in place/application response to shake sensor**| 'Shake phone above shake threshold' | 'displays toast to show shake threshold reached' |
+| **Returns resonse when shooken**| Shake phone | "yes" |
 
 ## Setup/Installation Requirements
 
@@ -31,6 +29,9 @@ _This application is used to take in user input and return a answer. The applica
 * _Save user input questions and results using Firebase_
 * _User will be able to delete and edit their saved questions/statements_
 * _User will be able to track success of decision making in personal log_
+OR
+* _User is able to input their possible answers into the app_
+* _User inputted solutions would allow app to act as a multi-sided coin toss which would be a useful tool_
 
 
 ## Known Bugs

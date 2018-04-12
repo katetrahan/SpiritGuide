@@ -30,7 +30,7 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
     private Sensor mSensor;
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
-    private static final int SHAKE_THRESHOLD = 3000;
+    private static final int SHAKE_THRESHOLD = 1000;
     private final Random r = new Random();
     private final String[] magicanswers = {"Yes", "No", "Maybe", "Hell Ya", "Please, No", "Ask Again Later", "You're Crazy", "Maybe In Crazy World", "All Signs Point To Yes", "You Look Amazing Today" };
 
@@ -92,7 +92,7 @@ public class SolutionsActivity extends AppCompatActivity  implements SensorEvent
                 long diffTime = (curTime - lastUpdate);
                 lastUpdate = curTime;
 
-                float speed = Math.abs(x + y + z - last_x - last_y - last_z)/diffTime * 10000;
+                float speed = Math.abs(x + y + z - last_x - last_y - last_z)/diffTime * 5000;
 
                 if(speed > SHAKE_THRESHOLD) {
                     Toast.makeText(SolutionsActivity.this, "shake works", Toast.LENGTH_LONG).show();
